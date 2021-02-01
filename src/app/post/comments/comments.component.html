@@ -1,0 +1,13 @@
+<p-fieldset legend="Comments" [transitionOptions]="'100ms'" >
+  <p-card *ngFor="let comment of comments; trackBy: trackByCommentId">
+    <p>{{ comment.body }}</p>
+
+    <ng-template pTemplate="footer">
+      <div class="comments__footer">
+        <!-- <span>ID:{{ comment.id }}</span> -->
+        <span>By:{{ comment.name }} - {{ comment.email }}</span>
+        <!-- <span>{{ comment.email }}</span> -->
+      </div>
+    </ng-template>
+  </p-card>
+</p-fieldset>

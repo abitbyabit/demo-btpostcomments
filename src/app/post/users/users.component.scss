@@ -1,0 +1,16 @@
+:host {
+    ::ng-deep {
+        
+        p-button {
+            &.selectedUser{
+                .p-button{
+                    background-color: orange;
+
+                }
+            }
+         }
+        .p-button {
+            margin: 0.25rem;
+        }
+    }
+}

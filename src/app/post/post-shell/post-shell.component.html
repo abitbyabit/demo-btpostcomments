@@ -1,0 +1,37 @@
+<div class="p-grid">
+  <div class="p-col-12 p-md-8 p-md-offset-2">
+    <div class="post-comments">
+      <h1 class="post-comments__title">Posts & comments</h1>
+
+      <h2>Please select a user to find their comments:</h2>
+
+      <div *ngIf="users$ | async as users">
+        <app-users
+          [users]="users"
+          [currentUser]="currentUser$ | async"
+          (userSelected)="onUserSelected($event)"
+        ></app-users>
+      </div>
+      <div *ngIf="isLoading$ | async">
+        <p-progressSpinner></p-progressSpinner>
+      </div>
+      <h2 *ngIf="currentUser$ | async">
+        Posts from : {{ (currentUser$ | async)?.name }}
+      </h2>
+      <div *ngIf="posts$ | async as posts">
+        <app-posts
+          [posts]="posts"
+          (postSelected)="onPostSelected($event)"
+        ></app-posts>
+        <div class="post-commnets__load-all">
+          <p-button
+            *ngIf="posts.length < 4; else noMorePost"
+            [label]="'...Load all'"
+            (click)="onClickLoadAll($event)"
+          ></p-button>
+          <ng-template #noMorePost><p>---End of Posts---</p></ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

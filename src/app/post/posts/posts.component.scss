@@ -1,0 +1,41 @@
+:host {
+    ::ng-deep {
+        .p-card-body{
+            padding: 0.5rem;
+        }
+        .p-card-content {
+            padding: 0;
+        }
+        .comments {
+            .p-card {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+  
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    &__title {
+        text-align: center;
+    }
+    &__action {
+        cursor: pointer;
+    } 
+}
+.comments__footer {
+    font-size: 0.8rem;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }

@@ -1,0 +1,24 @@
+<div class="p-grid">
+  <p-card class="p-col-12" *ngFor="let post of posts; trackBy: trackByPostId">
+    <div class="post">
+      <div class="post__content">
+        <div class="post__title">
+          <h3>{{ post.title }}</h3>
+        </div>
+        <p>{{ post.body }}</p>
+      </div>
+      <div class="post__action">
+        <span class="visually-hidden"> click plus icon to show comments; click minus icon to hide comments  </span>
+        <p-toggleButton
+          onIcon="pi pi-minus"
+          offIcon="pi pi-plus"
+          (onChange)="handleChange($event, post)"
+          ariaLabelledBy="expand-comment"
+        ></p-toggleButton>
+      </div>
+    </div>
+    <div class="comments" *ngIf="isPostCommentExpanded && post?.comments">
+      <app-comments [comments]="post?.comments"> </app-comments>
+    </div>
+  </p-card>
+</div>

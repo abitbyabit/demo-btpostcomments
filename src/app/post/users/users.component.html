@@ -1,0 +1,7 @@
+<ng-container *ngFor="let item of users">
+  <p-button
+    [label]="item.firstName"
+    [ngClass]="{ selectedUser: currentUser?.id == item.id }"
+    (click)="onClickUser(item)"
+  ></p-button>
+</ng-container>
