@@ -1,4 +1,7 @@
 # BtPostcomments
+This project is built using Angular 11+, ngrx 10+, primeng 11+, primeflex 2+.
+
+The demo can be checked by https://bt-assignment-1-post-comments.web.app . Or https://stackblitz.com/edit/angular-ivy-nx3nvc?file=src/app/app.component.ts
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
